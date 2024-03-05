@@ -81,7 +81,3 @@ form ul li .answers .answer label {
 form ul li .answers .answer input[type=radio], form ul li .answers .answer input[type=checkbox] {
   display: none;
 }
-
-span.red {
-  color: red;
-}
