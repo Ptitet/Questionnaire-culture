@@ -25,7 +25,7 @@ header {
 }
 header h1 {
   text-align: center;
-  background: linear-gradient(to right, #5313ca, #00a2ff);
+  background: linear-gradient(135deg, #5313ca, #00a2ff);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
@@ -69,7 +69,7 @@ form ul li .answers {
 }
 form ul li .answers .answer:has(input:checked) label {
   border-color: #000;
-  background: linear-gradient(to right, #5313ca, #00a2ff);
+  background: linear-gradient(135deg, #5313ca, #00a2ff);
   color: #fff;
 }
 form ul li .answers .answer label {
@@ -87,7 +87,7 @@ form ul li .answers .answer input[type=checkbox] {
   display: none;
 }
 form ul li .answers .answer .select-wrapper {
-  border: 2px solid #5313ca;
+  border: none;
   background: #000;
   color: #fff;
   position: relative;
@@ -96,13 +96,17 @@ form ul li .answers .answer .select-wrapper select {
   width: 100%;
   background: #000;
   color: #fff;
-  border: none;
+  border: 2px solid #fff;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   padding: 5px 10px;
   font-size: 0.9em;
   outline: none;
+  transition: all 100ms linear;
+}
+form ul li .answers .answer .select-wrapper select:hover, form ul li .answers .answer .select-wrapper select:focus {
+  border-color: #5313ca;
 }
 form ul li .answers .answer .select-wrapper::after {
   content: "▼";
@@ -110,7 +114,7 @@ form ul li .answers .answer .select-wrapper::after {
   rotate: 180deg;
   position: absolute;
   right: 10px;
-  top: 2px;
+  top: 5px;
   color: #fff;
   transition: rotate 150ms linear;
 }
@@ -121,13 +125,41 @@ form ul li .answers .answer input[type=number] {
   width: 100%;
   padding: 5px 10px;
   font-size: 0.9em;
-  border: 2px solid #5313ca;
+  border: 2px solid #fff;
   outline: none;
   text-align: center;
   caret-color: #5313ca;
+  background: #000;
+  color: #fff;
+  transition: all 100ms linear;
+}
+form ul li .answers .answer input[type=number]:hover, form ul li .answers .answer input[type=number]:focus {
+  border-color: #5313ca;
 }
 form ul li .answers .answer input[type=number]::-webkit-inner-spin-button, form ul li .answers .answer input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
           appearance: none;
   margin: 0;
+}
+form #submit {
+  margin-top: 2em;
+}
+form #submit button {
+  display: block;
+  margin: auto;
+  border: 2px solid #5313ca;
+  background: #000;
+  padding: 20px 30px;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 100;
+  letter-spacing: 2px;
+  transition: all 100ms linear;
+}
+form #submit button:hover {
+  background: linear-gradient(135deg, #5313ca, #00a2ff);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  border-color: white;
 }

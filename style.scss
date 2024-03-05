@@ -5,7 +5,7 @@
     user-select: none;
 }
 
-$main-gradient: linear-gradient(to right, #5313ca, #00a2ff);
+$main-gradient: linear-gradient(135deg, #5313ca, #00a2ff);
 $border-width: 2px;
 
 @keyframes huerotate {
@@ -95,7 +95,7 @@ form {
                     }
 
                     .select-wrapper {
-                        border: $border-width solid #5313ca;
+                        border: none;
                         background: #000;
                         color: #fff;
                         position: relative;
@@ -104,11 +104,16 @@ form {
                             width: 100%;
                             background: #000;
                             color: #fff;
-                            border: none;
+                            border: $border-width solid #fff;
                             appearance: none;
                             padding: 5px 10px;
                             font-size: 0.9em;
                             outline: none;
+                            transition: all 100ms linear;
+
+                            &:hover, &:focus {
+                                border-color: #5313ca;
+                            }
                         }
 
                         &::after {
@@ -117,7 +122,7 @@ form {
                             rotate: 180deg;
                             position: absolute;
                             right: 10px;
-                            top: 2px;
+                            top: 5px;
                             color: #fff;
                             transition: rotate 150ms linear;
                         }
@@ -131,10 +136,17 @@ form {
                         width: 100%;
                         padding: 5px 10px;
                         font-size: 0.9em;
-                        border: $border-width solid #5313ca;
+                        border: $border-width solid #fff;
                         outline: none;
                         text-align: center;
                         caret-color: #5313ca;
+                        background: #000;
+                        color: #fff;
+                        transition: all 100ms linear;
+
+                        &:hover, &:focus {
+                            border-color: #5313ca;
+                        }
 
                         &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
                             appearance: none;
@@ -142,6 +154,30 @@ form {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    #submit {
+        margin-top: 2em;
+
+        button {
+            display: block;
+            margin: auto;
+            border: $border-width solid #5313ca;
+            background: #000;
+            padding: 20px 30px;
+            color: #fff;
+            font-size: 1.3em;
+            font-weight: 100;
+            letter-spacing: 2px;
+            transition: all 100ms linear;
+
+            &:hover {
+                background: $main-gradient;
+                background-clip: text;
+                color: transparent;
+                border-color: white;
             }
         }
     }
