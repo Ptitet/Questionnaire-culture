@@ -6,6 +6,7 @@
 }
 
 $main-gradient: linear-gradient(to right, #5313ca, #00a2ff);
+$border-width: 2px;
 
 @keyframes huerotate {
     to {
@@ -43,8 +44,7 @@ form {
 
         li {
             padding: 1em;
-            border: 1px solid #fff;
-            // border-radius: 20px;
+            border: $border-width solid #fff;
 
             h2 {
                 font-size: 0.9em;
@@ -79,14 +79,67 @@ form {
 
                     label {
                         display: block;
-                        border: 1px solid #eee;
+                        border: $border-width solid #fff;
                         padding: 5px 20px;
-                        // border-radius: 10px;
                         text-align: center;
+                        transition: border 50ms linear;
+
+                        &:hover {
+                            border: $border-width solid #5313ca;
+                        }
                     }
 
-                    input[type=radio], input[type=checkbox] {
+                    input[type=radio],
+                    input[type=checkbox] {
                         display: none;
+                    }
+
+                    .select-wrapper {
+                        border: $border-width solid #5313ca;
+                        background: #000;
+                        color: #fff;
+                        position: relative;
+
+                        select {
+                            width: 100%;
+                            background: #000;
+                            color: #fff;
+                            border: none;
+                            appearance: none;
+                            padding: 5px 10px;
+                            font-size: 0.9em;
+                            outline: none;
+                        }
+
+                        &::after {
+                            content: '▼';
+                            pointer-events: none;
+                            rotate: 180deg;
+                            position: absolute;
+                            right: 10px;
+                            top: 2px;
+                            color: #fff;
+                            transition: rotate 150ms linear;
+                        }
+
+                        &:has(select:hover:focus)::after{
+                            rotate: 0deg;
+                        }
+                    }
+
+                    input[type=number] {
+                        width: 100%;
+                        padding: 5px 10px;
+                        font-size: 0.9em;
+                        border: $border-width solid #5313ca;
+                        outline: none;
+                        text-align: center;
+                        caret-color: #5313ca;
+
+                        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+                            appearance: none;
+                            margin: 0;
+                        }
                     }
                 }
             }

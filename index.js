@@ -108,6 +108,9 @@ for (const [i, question] of Object.entries(questions)) {
         }
         case 2: {
             const answerElement = document.createElement('div');
+            answerElement.classList.add('answer');
+            const selectWrapper = document.createElement('div');
+            selectWrapper.classList.add('select-wrapper');
             const select = document.createElement('select');
             select.name = `q${qn}`;
             for (let answer of question.answers) {
@@ -116,12 +119,14 @@ for (const [i, question] of Object.entries(questions)) {
                 option.innerText = answer;
                 select.appendChild(option);
             }
-            answerElement.appendChild(select);
+            selectWrapper.appendChild(select);
+            answerElement.appendChild(selectWrapper);
             answersContainer.appendChild(answerElement);
             break;
         }
         case 3: {
             const answerElement = document.createElement('div');
+            answerElement.classList.add('answer');
             const input = document.createElement('input');
             input.type = 'number';
             input.name = `q${qn}`;

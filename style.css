@@ -43,7 +43,7 @@ form ul {
 }
 form ul li {
   padding: 1em;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
 }
 form ul li h2 {
   font-size: 0.9em;
@@ -74,10 +74,60 @@ form ul li .answers .answer:has(input:checked) label {
 }
 form ul li .answers .answer label {
   display: block;
-  border: 1px solid #eee;
+  border: 2px solid #fff;
   padding: 5px 20px;
   text-align: center;
+  transition: border 50ms linear;
 }
-form ul li .answers .answer input[type=radio], form ul li .answers .answer input[type=checkbox] {
+form ul li .answers .answer label:hover {
+  border: 2px solid #5313ca;
+}
+form ul li .answers .answer input[type=radio],
+form ul li .answers .answer input[type=checkbox] {
   display: none;
+}
+form ul li .answers .answer .select-wrapper {
+  border: 2px solid #5313ca;
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+form ul li .answers .answer .select-wrapper select {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  outline: none;
+}
+form ul li .answers .answer .select-wrapper::after {
+  content: "▼";
+  pointer-events: none;
+  rotate: 180deg;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  color: #fff;
+  transition: rotate 150ms linear;
+}
+form ul li .answers .answer .select-wrapper:has(select:hover:focus)::after {
+  rotate: 0deg;
+}
+form ul li .answers .answer input[type=number] {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border: 2px solid #5313ca;
+  outline: none;
+  text-align: center;
+  caret-color: #5313ca;
+}
+form ul li .answers .answer input[type=number]::-webkit-inner-spin-button, form ul li .answers .answer input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
 }
