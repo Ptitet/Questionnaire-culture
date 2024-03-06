@@ -13,9 +13,9 @@ async function ask_mixtral(chat_history) {
     // format input
     for (const message of chat_history) {
         if (message.agent == USER) {
-            prompt += `</s><s>[INST]${message["text"].split('\n').join('\\n')}[/INST]`;
+            prompt += `</s><s>[INST]${message.text.split('\n').join('\\n')}[/INST]`;
         } else {
-            prompt += `${message["text"].split('\n').join('\\n')}`;
+            prompt += `${message.text.split('\n').join('\\n')}`;
         }
     }
     prompt = prompt.substring(4);
@@ -31,14 +31,14 @@ async function ask_mixtral(chat_history) {
     }
     `;
     let response = await fetch(req);
+    let text;
     if (response.status == 200) {
-        let text = await response.text();
+        text = await response.text();
         chat_history.push({ agent: AI, text });
-        response = text;
     } else {
-        response = `ERROR : ${response.status}`;
+        text = `ERROR : ${response.status}`;
     }
-    return { chat_history, response }
+    return { chat_history, text }
 }
 
 
