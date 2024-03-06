@@ -141,10 +141,10 @@ form ul li .answers .answer input[type=number]::-webkit-inner-spin-button, form 
           appearance: none;
   margin: 0;
 }
-form #submit {
+form #verify {
   margin-top: 2em;
 }
-form #submit button {
+form #verify button {
   display: block;
   margin: auto;
   border: 2px solid #5313ca;
@@ -156,7 +156,7 @@ form #submit button {
   letter-spacing: 2px;
   transition: all 100ms linear;
 }
-form #submit button:hover {
+form #verify button:hover {
   background: linear-gradient(135deg, #5313ca, #00a2ff);
   -webkit-background-clip: text;
           background-clip: text;
