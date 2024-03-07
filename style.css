@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,9 @@ body {
   background: #000;
   color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#huerotate {
   animation: huerotate 5s infinite linear;
 }
 
@@ -162,4 +166,115 @@ form #verify button:hover {
           background-clip: text;
   color: transparent;
   border-color: white;
+}
+
+div.chat {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 2px solid #fff;
+  padding: 0.4em;
+  transition: all 100ms ease-in-out;
+}
+div.chat #chat-wrapper {
+  display: none;
+  padding-top: 0;
+}
+div.chat h2 {
+  padding-left: 0.25em;
+}
+div.chat label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+div.chat input[type=checkbox] {
+  display: none;
+}
+div.chat #chat-open {
+  display: inline;
+  padding: 5px;
+}
+div.chat #chat-close {
+  display: none;
+}
+div.chat #chat-open,
+div.chat #chat-close {
+  font-size: 1.9em;
+  transition: color 100ms linear;
+}
+div.chat #chat-open:hover,
+div.chat #chat-close:hover {
+  color: #5313ca;
+  animation: huerotate 5s infinite linear;
+}
+div.chat:has(input[type=checkbox]:checked) {
+  bottom: 2em;
+  right: 2em;
+}
+div.chat:has(input[type=checkbox]:checked) #chat-open {
+  display: none;
+}
+div.chat:has(input[type=checkbox]:checked) #chat-close {
+  display: inline;
+}
+div.chat:has(input[type=checkbox]:checked) #chat-wrapper {
+  display: block;
+}
+div.chat #chat-body {
+  margin-top: 1.5em;
+}
+div.chat ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em;
+  height: 300px;
+  width: 340px;
+  overflow-y: auto;
+}
+div.chat ul li {
+  padding: 0.5em;
+  border: 2px solid #fff;
+  font-size: 0.9em;
+  font-weight: 100;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 300px;
+}
+div.chat ul li:nth-child(even) {
+  align-self: flex-end;
+}
+div.chat #chat-write {
+  border: 2px solid #fff;
+  padding: 0.3em;
+  margin: 0.2em;
+  margin-top: 0.4em;
+  display: flex;
+  gap: 5px;
+  animation: huerotate 5s infinite linear;
+}
+div.chat #chat-write:has(input:focus) {
+  border-color: #5313ca;
+}
+div.chat #chat-write button {
+  border: none;
+  background: none;
+  color: #fff;
+  transition: color 100ms linear;
+}
+div.chat #chat-write button:hover {
+  color: #5313ca;
+}
+div.chat #chat-write input {
+  border: none;
+  background: none;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  font-size: 1em;
+  caret-color: #5313ca;
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,8 @@
     user-select: none;
 }
 
-$main-gradient: linear-gradient(135deg, #5313ca, #00a2ff);
+$main-color: #5313ca;
+$main-gradient: linear-gradient(135deg, $main-color, #00a2ff);
 $border-width: 2px;
 
 @keyframes huerotate {
@@ -18,6 +21,9 @@ body {
     background: #000;
     color: #fff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#huerotate {
     animation: huerotate 5s infinite linear;
 }
 
@@ -85,7 +91,7 @@ form {
                         transition: border 50ms linear;
 
                         &:hover {
-                            border: $border-width solid #5313ca;
+                            border: $border-width solid $main-color;
                         }
                     }
 
@@ -111,8 +117,9 @@ form {
                             outline: none;
                             transition: all 100ms linear;
 
-                            &:hover, &:focus {
-                                border-color: #5313ca;
+                            &:hover,
+                            &:focus {
+                                border-color: $main-color;
                             }
                         }
 
@@ -127,7 +134,7 @@ form {
                             transition: rotate 150ms linear;
                         }
 
-                        &:has(select:hover:focus)::after{
+                        &:has(select:hover:focus)::after {
                             rotate: 0deg;
                         }
                     }
@@ -139,16 +146,18 @@ form {
                         border: $border-width solid #fff;
                         outline: none;
                         text-align: center;
-                        caret-color: #5313ca;
+                        caret-color: $main-color;
                         background: #000;
                         color: #fff;
                         transition: all 100ms linear;
 
-                        &:hover, &:focus {
-                            border-color: #5313ca;
+                        &:hover,
+                        &:focus {
+                            border-color: $main-color;
                         }
 
-                        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
                             appearance: none;
                             margin: 0;
                         }
@@ -164,7 +173,7 @@ form {
         button {
             display: block;
             margin: auto;
-            border: $border-width solid #5313ca;
+            border: $border-width solid $main-color;
             background: #000;
             padding: 20px 30px;
             color: #fff;
@@ -179,6 +188,136 @@ form {
                 color: transparent;
                 border-color: white;
             }
+        }
+    }
+}
+
+div.chat {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    backdrop-filter: blur(10px);
+    border: $border-width solid #fff;
+    padding: 0.4em;
+    transition: all 100ms ease-in-out;
+
+    #chat-wrapper {
+        display: none;
+        padding-top: 0;
+    }
+
+    h2 {
+        padding-left: 0.25em;
+    }
+
+    label {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    #chat-open {
+        display: inline;
+        padding: 5px;
+    }
+
+    #chat-close {
+        display: none;
+    }
+
+    #chat-open,
+    #chat-close {
+        font-size: 1.9em;
+        transition: color 100ms linear;
+    }
+
+    #chat-open:hover,
+    #chat-close:hover {
+        color: $main-color;
+        animation: huerotate 5s infinite linear;
+    }
+
+    &:has(input[type=checkbox]:checked) {
+        bottom: 2em;
+        right: 2em;
+
+        #chat-open {
+            display: none;
+        }
+
+        #chat-close {
+            display: inline;
+        }
+
+        #chat-wrapper {
+            display: block;
+        }
+    }
+
+    #chat-body {
+        margin-top: 1.5em;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        padding: 0.5em;
+        height: 300px;
+        width: 340px;
+        overflow-y: auto;
+
+        li {
+            padding: 0.5em;
+            border: $border-width solid #fff;
+            font-size: 0.9em;
+            font-weight: 100;
+            width: fit-content;
+            max-width: 300px;
+
+            &:nth-child(even) {
+                align-self: flex-end;
+            }
+        }
+    }
+
+    #chat-write {
+        border: $border-width solid #fff;
+        padding: 0.3em;
+        margin: 0.2em;
+        margin-top: 0.4em;
+        display: flex;
+        gap: 5px;
+        animation: huerotate 5s infinite linear;
+
+        &:has(input:focus) {
+            border-color: $main-color;
+        }
+
+        button {
+            border: none;
+            background: none;
+            color: #fff;
+            transition: color 100ms linear;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        input {
+            border: none;
+            background: none;
+            color: #fff;
+            outline: none;
+            width: 100%;
+            font-size: 1em;
+            caret-color: $main-color;
         }
     }
 }
