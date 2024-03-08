@@ -271,6 +271,7 @@ div.chat {
         height: 300px;
         width: 340px;
         overflow-y: auto;
+        scrollbar-width: none;
 
         li {
             padding: 0.5em;
