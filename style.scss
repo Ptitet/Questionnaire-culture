@@ -262,6 +262,18 @@ div.chat {
         margin-top: 1.5em;
     }
 
+    #messages {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            background: linear-gradient(to bottom, #000, transparent);
+        }
+    }
+
     ul {
         list-style: none;
         display: flex;

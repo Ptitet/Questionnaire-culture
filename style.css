@@ -226,6 +226,16 @@ div.chat:has(input[type=checkbox]:checked) #chat-wrapper {
 div.chat #chat-body {
   margin-top: 1.5em;
 }
+div.chat #messages {
+  position: relative;
+}
+div.chat #messages::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to bottom, #000, transparent);
+}
 div.chat ul {
   list-style: none;
   display: flex;
