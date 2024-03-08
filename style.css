@@ -235,6 +235,7 @@ div.chat ul {
   height: 300px;
   width: 340px;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 div.chat ul li {
   padding: 0.5em;
