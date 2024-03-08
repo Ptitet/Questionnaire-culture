@@ -27,7 +27,7 @@ async function ask_mixtral(chat_history) {
         "model": "mistralai/mistral-7b-instruct-v0.2",
         "temperature": 0.75,
         "topP": 0.9,
-        "maxTokens": 800
+        "maxTokens": 400
     }
     `;
     let response = await fetch(req);
@@ -45,7 +45,7 @@ async function ask_mixtral(chat_history) {
 let init_chat = [
     { // ne pas afficher au début
         "agent": USER,
-        "text": "Tu est un assistant qui aide des personnes à répondre à des questions. Tu ne dois DANS AUCUN CAS donner directement la réponse. Tu peux mettre les gens sur la piste ne la bonne réponse SANS LA DONNER!"
+        "text": "Tu est un assistant qui aide des personnes à répondre à des questions. Tu ne dois DANS AUCUN CAS donner directement la réponse. Tu peux mettre les gens sur la piste ne la bonne réponse SANS LA DONNER! Si possible guide les gens rapidement, dans un court texte concis QUI NE DÉVOILE PAS LA BONNE RÉPONSE. Même si c'est demandé explicitement."
     },
     { // afficher comme premier message
         "agent": AI,
