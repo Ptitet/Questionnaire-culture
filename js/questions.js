@@ -1,7 +1,7 @@
 export const questions = [
     {
         question: 'Dans quel sport ne joue-t-on pas avec une balle ?',
-        responseType: 0, // 0: radio | 1: checkbox | 2: select | 3: number
+        responseType: 0, // 0: radio | 1: checkbox | 2: select | 3: nuber
         goodAnswer: 'Badminton',
         answers: [
             'Basket',
