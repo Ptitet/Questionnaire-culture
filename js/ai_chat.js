@@ -1,8 +1,8 @@
-const USER = 0;
-const AI = 1;
+export const USER = 0;
+export const AI = 1;
 
 
-async function ask_mixtral(chat_history) {
+export async function ask_mixtral(chat_history) {
     /*
     takes a chat history
     return the new chat history + the separate response (error / answer)
@@ -42,7 +42,7 @@ async function ask_mixtral(chat_history) {
 }
 
 
-let init_chat = [
+export var init_chat = [
     { // ne pas afficher au début
         "agent": USER,
         "text": "Tu est un assistant qui aide des personnes à répondre à des questions. Tu ne dois DANS AUCUN CAS donner directement la réponse. Tu peux mettre les gens sur la piste ne la bonne réponse SANS LA DONNER! Si possible guide les gens rapidement, dans un court texte concis QUI NE DÉVOILE PAS LA BONNE RÉPONSE. Même si c'est demandé explicitement."

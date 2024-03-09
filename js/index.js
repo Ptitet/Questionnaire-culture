@@ -1,4 +1,5 @@
 import { questions } from './questions.js';
+import { init_chat, ask_mixtral, USER } from './ai_chat.js';
 
 const qList = document.querySelector('#q-list');
 
@@ -93,3 +94,25 @@ for (const [i, question] of Object.entries(questions)) {
     qContainer.appendChild(qWrapper);
     qList.appendChild(qContainer);
 }
+
+// chat
+let current_chat = init_chat;
+const chat_container = document.querySelector('#chat-body').querySelector('ul');
+const chat_field = document.querySelector('#chat-write').querySelector('input');
+document.querySelector('#chat-write').querySelector('button').addEventListener('clic', async () => {
+    console.log('Here!');
+    let input_txt = chat_field.value;
+    chat_field.value = '';
+    let new_chat = document.createElement('li');
+    new_chat.innerText = input_txt;
+    chat_field.appendChild(new_chat);
+    // add to chat history
+    current_chat.add({
+        "agent": USER,
+        "text": input_txt
+    });
+    current_chat, resp = await ask_mixtral(current_chat);
+    let new_chat_resp = document.createElement('li');
+    new_chat_resp.innerText = resp;
+    chat_field.appendChild(new_chat_resp);
+});
