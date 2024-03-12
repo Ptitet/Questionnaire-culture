@@ -1,51 +1,56 @@
 export const questions = [
     {
-        question: 'Dans quel sport ne joue-t-on pas avec une balle ?',
+        question: 'Jusqu\'en 1981, qu\'interdisait le règlement des Jeux Olympiques aux participants ?',
         responseType: 0, // 0: radio | 1: checkbox | 2: select | 3: number
-        goodAnswer: 'Badminton',
+        goodAnswer: 'D\'être sportif professionnel',
         answers: [
-            'Basket',
-            'Badminton',
-            'Golf',
-            'Voleyball'
+            'D\'être porteur d\'un handicap',
+            'De boire de l\'alcool précédant l\'année des jeux',
+            'D\'être sportif professionnel',
+            'De s\'entraîner la semaine précédant les jeux'
         ]
     },
     {
-        question: 'Quel est le plus grand pays du monde ?',
+        question: 'Qui est à l\'origine des Jeux Olympiques modernes ?',
         responseType: 2,
-        goodAnswer: 'Russie',
+        goodAnswer: 'Pierre de Coubertin',
         answers: [
-            'Russie',
-            'Canada',
-            'Chine',
-            'USA'
+            'Ludwig Guttman',
+            'Pierre de Coubertin',
+            'Jacques Rogge',
+            'Henri Didon'
         ]
     },
     {
-        question: 'Quels sont les bonnes réponses ?',
+        question: 'En quelles années les Jeux Olympiques ont-ils été annulés ?',
         responseType: 1,
-        goodAnswer: ['Celle-ci', 'Celle-ci aussi', 'Celle-là'],
+        goodAnswer: ['1916', '1940', '1944'],
         answers: [
-            'Celle-là',
-            'Celle-ci',
-            'Mais pas celle-là',
-            'Celle-ci aussi'
+            '1916',
+            '1940',
+            '1944',
+            '2020'
         ]
     },
     {
-        question: 'Quels sont les 3 premiers chiffres de la suite de Fibonacci ?',
-        responseType: 0,
-        goodAnswer: '0, 1, 1',
-        answers: [
-            '0, 1, 2',
-            '0, 1, 1',
-            '1, 1, 2',
-            '1, 2, 3'
-        ]
-    },
-    {
-        question: 'Quel est le nombre de jours dans une année bissextile ?',
+        question: 'Combien de nations sont représentées aux Jeux Olympiques ?',
         responseType: 3,
-        goodAnswer: '366'
+        goodAnswer: '206'
+    },
+    {
+        question: 'Qui est l\'athlète le/la plus médaillé(e) des Jeux Olympiques ?',
+        responseType: 2,
+        goodAnswer: 'Michael Phelps',
+        answers: [
+            'Marit Bjørgen',
+            'Alice Milliat',
+            'Michael Phelps',
+            'Charlotte Cooper'
+        ]
+    },
+    {
+        question: 'En quelle année les femmes sont-elles admises aux Jeux Olympiques ?',
+        responseType: 3,
+        goodAnswer: '1928'
     }
 ];
