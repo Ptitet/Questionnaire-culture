@@ -256,7 +256,7 @@ div.chat ul li {
   width: fit-content;
   max-width: 300px;
 }
-div.chat ul li:nth-child(even) {
+div.chat ul li.user {
   align-self: flex-end;
 }
 div.chat #chat-write {

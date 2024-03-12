@@ -293,7 +293,7 @@ div.chat {
             width: fit-content;
             max-width: 300px;
 
-            &:nth-child(even) {
+            &.user {
                 align-self: flex-end;
             }
         }
