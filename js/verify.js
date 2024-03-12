@@ -13,7 +13,7 @@ verifyButton.addEventListener('click', e => {
             case 0: { // radio
                 const chosen = qContainer.querySelector('input[type="radio"]:checked');
                 if (chosen) {
-                    let answer = chosen.id.split('-', 1)[1];
+                    let answer = chosen.id.split('-').slice(1).join('-');
                     if (answer === question.goodAnswer) {
                         score++;
                     }
@@ -25,7 +25,7 @@ verifyButton.addEventListener('click', e => {
                 if (chosen.length > 0) {
                     let answers = [];
                     chosen.forEach(c => {
-                        answers.push(c.id.split('-', 1)[1]);
+                        answers.push(c.id.split('-').slice(1).join('-'));
                     });
                     if (arraySameValues(answers, question.goodAnswer)) {
                         score++;
