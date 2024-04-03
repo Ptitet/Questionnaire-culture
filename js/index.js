@@ -1,5 +1,7 @@
 import { questions } from './questions.js';
 
+// cool color function : https://www.desmos.com/calculator/oaabzhiqau
+
 const qList = document.querySelector('#q-list');
 
 for (const [i, question] of Object.entries(questions)) {
