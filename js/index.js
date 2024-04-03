@@ -24,7 +24,7 @@ for (const [i, question] of Object.entries(questions)) {
     answersContainer.classList.add('answers');
 
     switch (question.responseType) {
-        case 0: {
+        case 0: { // radio
             for (let answer of question.answers) {
                 let answerElement = document.createElement('div');
                 answerElement.classList.add('answer');
@@ -41,7 +41,7 @@ for (const [i, question] of Object.entries(questions)) {
             }
             break;
         }
-        case 1: {
+        case 1: { // checkbox
             for (let answer of question.answers) {
                 let answerElement = document.createElement('div');
                 answerElement.classList.add('answer');
@@ -58,7 +58,7 @@ for (const [i, question] of Object.entries(questions)) {
             }
             break;
         }
-        case 2: {
+        case 2: { // select
             const answerElement = document.createElement('div');
             answerElement.classList.add('answer');
             const selectWrapper = document.createElement('div');
@@ -77,7 +77,7 @@ for (const [i, question] of Object.entries(questions)) {
             answersContainer.appendChild(answerElement);
             break;
         }
-        case 3: {
+        case 3: { // number
             const answerElement = document.createElement('div');
             answerElement.classList.add('answer');
             const input = document.createElement('input');
