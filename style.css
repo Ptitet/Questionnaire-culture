@@ -40,7 +40,6 @@ body>* {
 
 header {
   padding: 1em;
-  box-shadow: 0px 00px 25px 25px rgba(0, 0, 0, 255);
 }
 
 header h1 {
@@ -59,22 +58,21 @@ header h1 {
   position: fixed;
   right: 0;
   bottom: 0;
-  box-shadow: 0px 00px 25px 25px rgba(0, 0, 0, 255);
+  padding: 10px;
 }
 
 form {
-  margin: auto;
-  width: clamp(500px, 50vw, 700px);
+  background: transparent;
   padding: 10px;
   /* EDITED */
   padding-top: 50px;
   padding-bottom: 50px;
-  box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 255);
-  /* basic shadow */
-  /* EDITED */
 }
 
 form ul {
+  background: transparent;
+  margin: auto;
+  width: clamp(500px, 50vw, 700px);
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -83,7 +81,6 @@ form ul {
 
 form ul li {
   padding: 1em;
-  border: 2px solid #fff;
 }
 
 form ul li h2 {
@@ -202,7 +199,8 @@ form ul li .answers .answer input[type=number]::-webkit-outer-spin-button {
 }
 
 form #verify {
-  margin-top: 2em;
+  background: transparent;
+  margin-top: 50px;
 }
 
 form #verify button {
@@ -223,5 +221,4 @@ form #verify button:hover {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  border-color: white;
 }
