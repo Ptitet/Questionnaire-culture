@@ -1,6 +1,24 @@
 import { questions } from './questions.js';
 
+// COLOR BACKGROUND
 // cool color function : https://www.desmos.com/calculator/oaabzhiqau
+
+function monocol(a, offset) {
+    return Math.min(255,Math.max(0,Math.abs((a-offset + 12*255)%(6*255)-3*255)-255));
+}
+
+function getcol(value) {
+    return "rgb(" + monocol(value, 0) + "," + monocol(value, 2 * 256) + "," + monocol(value, 4 * 256) + ")";
+}
+
+const bg = document.querySelector("body");
+const color_slider = document.querySelector(".slider-wrapper").querySelector("input");
+color_slider.addEventListener("input", () => {
+    bg.style.backgroundColor = getcol(color_slider.value);
+})
+
+
+// end COLOR BACKGROUND
 
 const qList = document.querySelector('#q-list');
 

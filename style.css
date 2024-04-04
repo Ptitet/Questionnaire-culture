@@ -26,7 +26,7 @@ body > * {/* EDITED */
 
 header {
   padding: 1em;
-  background: linear-gradient(to bottom, rgba(0,0,0,255) 70%, rgba(255,255,255,0)); /* EDITED */
+  box-shadow: 0px 00px 25px 25px rgba(0,0,0, 255);
 }
 header h1 {
   text-align: center;
@@ -36,12 +36,34 @@ header h1 {
   color: transparent;
 }
 
+.slider-wrapper {
+  animation: none;
+  background-color: #000;
+  margin: 10px;
+  z-index: 1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0px 00px 25px 25px rgba(0,0,0, 255);
+}/*
+.color-slider {
+  animation: none;
+  background-color: #000;
+  background: #000;
+  margin: 10px;
+  z-index: 1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}*/
+
 form {
   margin: auto;
   width: clamp(500px, 50vw, 700px);
   padding: 10px; /* EDITED */
-  box-shadow: 0px 0px 25px 25px rgba(0,0,0, 255),  /* basic shadow */ /* EDITED */
-  0px -10px 10px 5px rgba(0,0,0, 255);  /* fill gap under header (ugly and overlap header) */ /* EDITED */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-shadow: 0px 0px 25px 25px rgba(0,0,0, 255);  /* basic shadow */ /* EDITED */
 }
 form ul {
   list-style: none;
